@@ -45,3 +45,11 @@ foreach ($nameField->getFieldsNames() as $name) {
 
 ### Вывод в шаблоне / коде значения поля с текущим языком
 
+```php
+$model->name
+```
+
+
+```smarty
+{$model->name}
+```
