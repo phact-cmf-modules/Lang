@@ -14,9 +14,7 @@
 namespace Modules\Lang;
 
 use Phact\Module\Module;
-use Modules\Admin\Traits\AdminTrait;
 
 class LangModule extends Module
 {
-    use AdminTrait;
 }

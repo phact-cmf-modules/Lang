@@ -24,6 +24,8 @@ class LangTextField extends TextField
 
     public $virtual = true;
 
+    public $editable = false;
+
     public $rawGet = false;
 
     public $rawSet = false;

@@ -17,13 +17,25 @@ namespace Modules\Lang\Components;
 
 use Phact\Helpers\SmartProperties;
 
-abstract class Lang
+class Lang
 {
     use SmartProperties;
 
     protected $_langs = [];
 
     protected $_primaryLang = '';
+
+    /**
+     * @var LangDetectorInterface
+     */
+    private $detector;
+
+    public function __construct($langs, $primaryLang, LangDetectorInterface $detector)
+    {
+        $this->_langs = $langs;
+        $this->_primaryLang =  $primaryLang;
+        $this->detector = $detector;
+    }
 
     /**
      * @return array
@@ -57,5 +69,8 @@ abstract class Lang
         $this->_primaryLang = $primaryLang;
     }
 
-    abstract public function getCurrentLang();
+    public function getCurrentLang()
+    {
+        return $this->detector->detect();
+    }
 }

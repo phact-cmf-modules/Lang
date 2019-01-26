@@ -24,12 +24,14 @@ class LangCharField extends CharField
 
     public $virtual = true;
 
+    public $editable = false;
+
     public $rawGet = false;
 
     public $rawSet = false;
 
     public function getFieldsClass()
     {
-        return CharField::class;
+        return parent::class;
     }
 }
